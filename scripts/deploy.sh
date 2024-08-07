@@ -97,7 +97,7 @@ EOF
     fi
 
     log "building $arch bootstrapZip..."
-    BOOTSTRAP_ZIP="$(nix build --no-link --print-out-paths --impure ".#bootstrapZip-${arch}")"
+    BOOTSTRAP_ZIP="$(nix build --no-link --print-out-paths ".#bootstrapZip-${arch}")"
     UPLOADS+=($BOOTSTRAP_ZIP/bootstrap-$arch.zip)
 done
 
